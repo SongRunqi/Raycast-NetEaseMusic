@@ -1,257 +1,200 @@
 {
   "$schema": "https://www.raycast.com/schemas/extension.json",
-  "name": "netease-music-controller",
-  "title": "NetEaseMusic Controller",
-  "description": "Control NetEase Music playback, likes, repeat, shuffle, lyrics, and volume in English or Chinese.",
+  "name": "netease-music-controls",
+  "title": "NetEase Music Controls",
+  "description": "Control playback, volume, likes, repeat, shuffle, and lyrics in NetEase Music.",
   "icon": "netease-music.png",
-  "author": "chyroc",
+  "author": "yitiansong4",
   "license": "MIT",
   "platforms": [
     "macOS"
   ],
+  "categories": [
+    "Media"
+  ],
   "keywords": [
     "netease",
-    "neteasemusic",
-    "net-ease",
+    "netease music",
     "cloud music",
-    "网易云",
-    "网易云音乐",
-    "音乐",
+    "music",
     "player"
-  ],
-  "preferences": [
-    {
-      "name": "language",
-      "title": "Language / 语言",
-      "description": "Language used by the command list and HUD messages.",
-      "type": "dropdown",
-      "required": false,
-      "default": "auto",
-      "data": [
-        {
-          "title": "Auto / 自动",
-          "value": "auto"
-        },
-        {
-          "title": "English",
-          "value": "en"
-        },
-        {
-          "title": "中文",
-          "value": "zh"
-        }
-      ]
-    }
   ],
   "commands": [
     {
       "name": "controls",
-      "title": "Controls / 控制",
-      "subtitle": "NetEaseMusic",
-      "description": "Open a bilingual control panel for NetEase Music.",
+      "title": "Controls",
+      "subtitle": "NetEase Music",
+      "description": "Open a control panel for NetEase Music.",
       "mode": "view",
       "keywords": [
         "menu",
         "controls",
-        "control",
-        "控制",
-        "菜单"
+        "control"
       ]
     },
     {
       "name": "play",
-      "title": "Play / 播放",
-      "subtitle": "NetEaseMusic",
+      "title": "Play",
+      "subtitle": "NetEase Music",
       "description": "Play the current track in NetEase Music.",
       "mode": "no-view",
       "keywords": [
         "start",
-        "resume",
-        "播放",
-        "继续"
+        "resume"
       ]
     },
     {
       "name": "stop",
-      "title": "Stop / 停止",
-      "subtitle": "NetEaseMusic",
+      "title": "Stop",
+      "subtitle": "NetEase Music",
       "description": "Stop playback by pausing NetEase Music.",
       "mode": "no-view",
       "keywords": [
-        "pause",
-        "暂停",
-        "停止"
+        "pause"
       ]
     },
     {
       "name": "toggle-play",
-      "title": "Toggle Play/Pause / 播放暂停",
-      "subtitle": "NetEaseMusic",
+      "title": "Toggle Play/Pause",
+      "subtitle": "NetEase Music",
       "description": "Toggle play or pause in NetEase Music.",
       "mode": "no-view",
       "keywords": [
         "toggle",
-        "play pause",
-        "播放",
-        "暂停",
-        "切换"
+        "play pause"
       ]
     },
     {
       "name": "next-track",
-      "title": "Next / 下一首",
-      "subtitle": "NetEaseMusic",
+      "title": "Next Track",
+      "subtitle": "NetEase Music",
       "description": "Skip to the next track in NetEase Music.",
       "mode": "no-view",
       "keywords": [
         "next track",
-        "skip",
-        "下一首",
-        "下首"
+        "skip"
       ]
     },
     {
       "name": "previous-track",
-      "title": "Previous / 上一首",
-      "subtitle": "NetEaseMusic",
+      "title": "Previous Track",
+      "subtitle": "NetEase Music",
       "description": "Go to the previous track in NetEase Music.",
       "mode": "no-view",
       "keywords": [
         "previous track",
-        "back",
-        "上一首",
-        "上首"
+        "back"
       ]
     },
     {
       "name": "turn-up-volume",
-      "title": "Increase Volume / 增大音量",
-      "subtitle": "NetEaseMusic",
+      "title": "Increase Volume",
+      "subtitle": "NetEase Music",
       "description": "Increase NetEase Music volume.",
       "mode": "no-view",
       "keywords": [
         "volume up",
-        "louder",
-        "音量",
-        "增大音量"
+        "louder"
       ]
     },
     {
       "name": "turn-down-volume",
-      "title": "Decrease Volume / 减小音量",
-      "subtitle": "NetEaseMusic",
+      "title": "Decrease Volume",
+      "subtitle": "NetEase Music",
       "description": "Decrease NetEase Music volume.",
       "mode": "no-view",
       "keywords": [
         "volume down",
-        "quieter",
-        "音量",
-        "减小音量"
+        "quieter"
       ]
     },
     {
       "name": "like",
-      "title": "Like / 喜欢",
-      "subtitle": "NetEaseMusic",
+      "title": "Like Track",
+      "subtitle": "NetEase Music",
       "description": "Like the current track in NetEase Music.",
       "mode": "no-view",
       "keywords": [
         "love",
         "favorite",
-        "heart",
-        "喜欢",
-        "红心"
+        "heart"
       ]
     },
     {
       "name": "dislike",
-      "title": "Dislike / 取消喜欢",
-      "subtitle": "NetEaseMusic",
+      "title": "Dislike Track",
+      "subtitle": "NetEase Music",
       "description": "Dislike or unlike the current track in NetEase Music.",
       "mode": "no-view",
       "keywords": [
         "unlike",
-        "remove favorite",
-        "取消喜欢",
-        "取消红心",
-        "不喜欢"
+        "remove favorite"
       ]
     },
     {
       "name": "repeat-off",
-      "title": "Repeat off / 关闭重复",
-      "subtitle": "NetEaseMusic",
+      "title": "Turn Repeat off",
+      "subtitle": "NetEase Music",
       "description": "Set repeat mode to off in NetEase Music.",
       "mode": "no-view",
       "keywords": [
         "repeat off",
-        "loop off",
-        "重复",
-        "关闭循环"
+        "loop off"
       ]
     },
     {
       "name": "repeat-one",
-      "title": "Repeat One / 单曲循环",
-      "subtitle": "NetEaseMusic",
+      "title": "Repeat One",
+      "subtitle": "NetEase Music",
       "description": "Set repeat mode to one track in NetEase Music.",
       "mode": "no-view",
       "keywords": [
         "repeat one",
-        "single loop",
-        "单曲循环",
-        "重复"
+        "single loop"
       ]
     },
     {
       "name": "repeat-all",
-      "title": "Repeat All / 列表循环",
-      "subtitle": "NetEaseMusic",
+      "title": "Repeat All",
+      "subtitle": "NetEase Music",
       "description": "Set repeat mode to all tracks in NetEase Music.",
       "mode": "no-view",
       "keywords": [
         "repeat all",
-        "playlist loop",
-        "列表循环",
-        "全部重复"
+        "playlist loop"
       ]
     },
     {
       "name": "toggle-shuffle",
-      "title": "Shuffle / 随机播放",
-      "subtitle": "NetEaseMusic",
+      "title": "Shuffle",
+      "subtitle": "NetEase Music",
       "description": "Toggle shuffle in NetEase Music.",
       "mode": "no-view",
       "keywords": [
         "random",
-        "shuffle",
-        "随机",
-        "随机播放"
+        "shuffle"
       ]
     },
     {
       "name": "toggle-lyrics",
-      "title": "Show/Hide Lyrics / 显示隐藏歌词",
-      "subtitle": "NetEaseMusic",
+      "title": "Show/Hide Lyrics",
+      "subtitle": "NetEase Music",
       "description": "Show or hide lyrics in NetEase Music.",
       "mode": "no-view",
       "keywords": [
         "lyrics",
-        "lyric",
-        "歌词",
-        "桌面歌词"
+        "lyric"
       ]
     },
     {
       "name": "customize-touch-bar",
-      "title": "Customize Touch Bar / 自定触控栏",
-      "subtitle": "NetEaseMusic",
+      "title": "Customize Touch Bar",
+      "subtitle": "NetEase Music",
       "description": "Open NetEase Music's Customize Touch Bar command.",
       "mode": "no-view",
       "keywords": [
         "touch bar",
-        "touchbar",
-        "触控栏"
+        "touchbar"
       ]
     }
   ],

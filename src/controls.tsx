@@ -1,6 +1,5 @@
 import { Action, ActionPanel, List } from "@raycast/api";
 import { ACTIONS, ActionId, runAction } from "./actions";
-import { t } from "./localization";
 
 const playbackActions: ActionId[] = ["play", "stop", "toggle-play", "next-track", "previous-track"];
 const volumeActions: ActionId[] = ["turn-up-volume", "turn-down-volume"];
@@ -9,33 +8,33 @@ const otherActions: ActionId[] = ["toggle-lyrics", "customize-touch-bar"];
 
 export default function Command() {
   return (
-    <List searchBarPlaceholder={t({ en: "Search NetEase Music controls...", zh: "搜索网易云音乐控制..." })}>
-      <List.Section title={t({ en: "Playback", zh: "播放" })}>
+    <List searchBarPlaceholder="Search NetEase Music controls...">
+      <List.Section title="Playback">
         {playbackActions.map((id) => (
           <ControlItem key={id} id={id} />
         ))}
       </List.Section>
 
-      <List.Section title={t({ en: "Volume", zh: "音量" })}>
+      <List.Section title="Volume">
         {volumeActions.map((id) => (
           <ControlItem key={id} id={id} />
         ))}
       </List.Section>
 
-      <List.Section title={t({ en: "Favorites", zh: "喜欢" })}>
+      <List.Section title="Favorites">
         {favoriteActions.map((id) => (
           <ControlItem key={id} id={id} />
         ))}
       </List.Section>
 
-      <List.Section title={t({ en: "Playback Mode", zh: "播放模式" })}>
+      <List.Section title="Playback Mode">
         <List.Item
-          title={t({ en: "Repeat", zh: "重复" })}
-          subtitle={t({ en: "Choose Off, One, or All", zh: "选择关闭、单曲或全部" })}
-          keywords={["repeat", "off", "one", "all", "重复", "单曲循环", "列表循环"]}
+          title="Repeat"
+          subtitle="Choose Off, One, or All"
+          keywords={["repeat", "off", "one", "all", "loop"]}
           actions={
             <ActionPanel>
-              <ActionPanel.Submenu title={t({ en: "Set Repeat", zh: "设置重复" })}>
+              <ActionPanel.Submenu title="Set Repeat…">
                 <RunAction id="repeat-off" />
                 <RunAction id="repeat-one" />
                 <RunAction id="repeat-all" />
@@ -49,7 +48,7 @@ export default function Command() {
         <ControlItem id="toggle-shuffle" />
       </List.Section>
 
-      <List.Section title={t({ en: "Other", zh: "其他" })}>
+      <List.Section title="Other">
         {otherActions.map((id) => (
           <ControlItem key={id} id={id} />
         ))}
@@ -67,9 +66,9 @@ function ControlItem({ id }: ControlItemProps) {
 
   return (
     <List.Item
-      title={t(action.title)}
-      subtitle={t(action.subtitle)}
-      keywords={[action.title.en, action.title.zh, action.subtitle.en, action.subtitle.zh]}
+      title={action.title}
+      subtitle={action.subtitle}
+      keywords={[action.title, action.subtitle]}
       actions={
         <ActionPanel>
           <RunAction id={id} />
@@ -88,7 +87,7 @@ function RunAction({ id }: RunActionProps) {
 
   return (
     <Action
-      title={t(action.title)}
+      title={action.title}
       onAction={async () => {
         await runAction(id);
       }}

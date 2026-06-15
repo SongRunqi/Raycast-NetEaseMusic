@@ -7,10 +7,7 @@
 
 /* eslint-disable @typescript-eslint/ban-types */
 
-type ExtensionPreferences = {
-  /** Language / 语言 - Language used by the command list and HUD messages. */
-  "language": "auto" | "en" | "zh"
-}
+type ExtensionPreferences = {}
 
 /** Preferences accessible in all the extension's commands */
 declare type Preferences = ExtensionPreferences

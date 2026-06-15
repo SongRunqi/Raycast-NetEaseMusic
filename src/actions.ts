@@ -1,7 +1,6 @@
 import { closeMainWindow, showHUD } from "@raycast/api";
 import { execFile } from "node:child_process";
 import { promisify } from "node:util";
-import { BilingualText, bilingual } from "./localization";
 
 const execFileAsync = promisify(execFile);
 
@@ -29,9 +28,8 @@ export type ActionId =
 
 interface BaseActionDefinition {
   id: ActionId;
-  title: BilingualText;
-  subtitle: BilingualText;
-  hud: BilingualText;
+  title: string;
+  subtitle: string;
 }
 
 interface MenuItemActionDefinition extends BaseActionDefinition {
@@ -51,125 +49,110 @@ export const ACTIONS: Record<ActionId, ActionDefinition> = {
   play: {
     id: "play",
     kind: MENU_ITEM_KIND,
-    title: bilingual("Play", "播放"),
-    subtitle: bilingual("Start or resume playback", "开始或继续播放"),
-    hud: bilingual("Playing NetEase Music", "网易云音乐开始播放"),
+    title: "Play",
+    subtitle: "Start or resume playback",
     candidates: ["Play", "Resume", "播放", "继续播放"],
     allowMissingAsSuccess: true,
   },
   stop: {
     id: "stop",
     kind: MENU_ITEM_KIND,
-    title: bilingual("Stop", "停止"),
-    subtitle: bilingual("Stop playback by pausing", "通过暂停来停止播放"),
-    hud: bilingual("Stopped NetEase Music", "网易云音乐已停止"),
+    title: "Stop",
+    subtitle: "Stop playback by pausing",
     candidates: ["Pause", "Stop", "暂停", "停止"],
     allowMissingAsSuccess: true,
   },
   "toggle-play": {
     id: "toggle-play",
     kind: MENU_ITEM_KIND,
-    title: bilingual("Toggle Play/Pause", "播放/暂停"),
-    subtitle: bilingual("Switch between play and pause", "切换播放和暂停"),
-    hud: bilingual("Toggled playback", "已切换播放状态"),
+    title: "Toggle Play/Pause",
+    subtitle: "Switch between play and pause",
     candidates: ["Play", "Pause", "Resume", "播放", "暂停", "继续播放"],
   },
   "next-track": {
     id: "next-track",
     kind: MENU_ITEM_KIND,
-    title: bilingual("Next", "下一首"),
-    subtitle: bilingual("Skip to the next track", "播放下一首"),
-    hud: bilingual("Skipped to next track", "已播放下一首"),
+    title: "Next Track",
+    subtitle: "Skip to the next track",
     candidates: ["Next", "Next Track", "下一首", "下一曲"],
   },
   "previous-track": {
     id: "previous-track",
     kind: MENU_ITEM_KIND,
-    title: bilingual("Previous", "上一首"),
-    subtitle: bilingual("Go back to the previous track", "播放上一首"),
-    hud: bilingual("Returned to previous track", "已播放上一首"),
+    title: "Previous Track",
+    subtitle: "Go back to the previous track",
     candidates: ["Previous", "Previous Track", "上一首", "上一曲"],
   },
   "turn-up-volume": {
     id: "turn-up-volume",
     kind: MENU_ITEM_KIND,
-    title: bilingual("Increase Volume", "增大音量"),
-    subtitle: bilingual("Turn NetEase Music up", "调高网易云音乐音量"),
-    hud: bilingual("Increased volume", "已增大音量"),
+    title: "Increase Volume",
+    subtitle: "Turn NetEase Music up",
     candidates: ["Increase Volume", "Volume Up", "增大音量", "调高音量", "音量增大"],
   },
   "turn-down-volume": {
     id: "turn-down-volume",
     kind: MENU_ITEM_KIND,
-    title: bilingual("Decrease Volume", "减小音量"),
-    subtitle: bilingual("Turn NetEase Music down", "调低网易云音乐音量"),
-    hud: bilingual("Decreased volume", "已减小音量"),
+    title: "Decrease Volume",
+    subtitle: "Turn NetEase Music down",
     candidates: ["Decrease Volume", "Volume Down", "减小音量", "调低音量", "音量减小"],
   },
   like: {
     id: "like",
     kind: MENU_ITEM_KIND,
-    title: bilingual("Like", "喜欢"),
-    subtitle: bilingual("Like the current track", "喜欢当前歌曲"),
-    hud: bilingual("Liked current track", "已喜欢当前歌曲"),
+    title: "Like Track",
+    subtitle: "Like the current track",
     candidates: ["Like", "Love", "Favorite", "喜欢", "红心", "添加到我喜欢的音乐"],
     allowMissingAsSuccess: true,
   },
   dislike: {
     id: "dislike",
     kind: MENU_ITEM_KIND,
-    title: bilingual("Dislike", "取消喜欢"),
-    subtitle: bilingual("Dislike or unlike the current track", "取消喜欢当前歌曲"),
-    hud: bilingual("Disliked current track", "已取消喜欢当前歌曲"),
+    title: "Dislike Track",
+    subtitle: "Dislike or unlike the current track",
     candidates: ["Dislike", "Unlike", "Unfavorite", "Cancel Like", "取消喜欢", "取消红心", "不喜欢", "取消收藏"],
     allowMissingAsSuccess: true,
   },
   "repeat-off": {
     id: "repeat-off",
     kind: REPEAT_KIND,
-    title: bilingual("Repeat Off", "关闭重复"),
-    subtitle: bilingual("Turn repeat off", "关闭循环播放"),
-    hud: bilingual("Repeat is off", "已关闭循环播放"),
+    title: "Turn Repeat off",
+    subtitle: "Turn repeat off",
     modeCandidates: ["Off", "None", "关闭", "关", "不重复", "关闭重复"],
   },
   "repeat-one": {
     id: "repeat-one",
     kind: REPEAT_KIND,
-    title: bilingual("Repeat One", "单曲循环"),
-    subtitle: bilingual("Repeat the current track", "单曲循环当前歌曲"),
-    hud: bilingual("Repeat one is on", "已开启单曲循环"),
+    title: "Repeat One",
+    subtitle: "Repeat the current track",
     modeCandidates: ["One", "Repeat One", "单曲", "单曲循环"],
   },
   "repeat-all": {
     id: "repeat-all",
     kind: REPEAT_KIND,
-    title: bilingual("Repeat All", "列表循环"),
-    subtitle: bilingual("Repeat all tracks", "列表循环全部歌曲"),
-    hud: bilingual("Repeat all is on", "已开启列表循环"),
+    title: "Repeat All",
+    subtitle: "Repeat all tracks",
     modeCandidates: ["All", "Repeat All", "全部", "列表循环", "全部重复"],
   },
   "toggle-shuffle": {
     id: "toggle-shuffle",
     kind: MENU_ITEM_KIND,
-    title: bilingual("Shuffle", "随机播放"),
-    subtitle: bilingual("Toggle shuffle", "切换随机播放"),
-    hud: bilingual("Toggled shuffle", "已切换随机播放"),
+    title: "Shuffle",
+    subtitle: "Toggle shuffle",
     candidates: ["Shuffle", "Shuffle Playback", "随机播放", "随机"],
   },
   "toggle-lyrics": {
     id: "toggle-lyrics",
     kind: MENU_ITEM_KIND,
-    title: bilingual("Show/Hide Lyrics", "显示/隐藏歌词"),
-    subtitle: bilingual("Toggle the lyrics window", "显示或隐藏歌词"),
-    hud: bilingual("Toggled lyrics", "已切换歌词显示"),
+    title: "Show/Hide Lyrics",
+    subtitle: "Toggle the lyrics window",
     candidates: ["Show/Hide Lyrics", "Show Lyrics", "Hide Lyrics", "显示/隐藏歌词", "显示歌词", "隐藏歌词", "桌面歌词"],
   },
   "customize-touch-bar": {
     id: "customize-touch-bar",
     kind: MENU_ITEM_KIND,
-    title: bilingual("Customize Touch Bar", "自定触控栏"),
-    subtitle: bilingual("Open NetEase Music's Touch Bar customizer", "打开网易云音乐触控栏自定界面"),
-    hud: bilingual("Opened Touch Bar customization", "已打开触控栏自定界面"),
+    title: "Customize Touch Bar",
+    subtitle: "Open NetEase Music's Touch Bar customizer",
     candidates: [
       "Customize Touch Bar",
       "Customize Touch Bar…",

@@ -1,31 +1,26 @@
-# NetEaseMusic Controller
+# NetEase Music Controls
 
-Control the macOS NetEase Music app from Raycast in English or Chinese.
+Control the macOS NetEase Music app from Raycast.
 
 ## Commands
 
-- Controls / 控制: bilingual control panel
-- Play / 播放
-- Stop / 停止 (pauses playback)
-- Toggle Play/Pause / 播放暂停
-- Next / 下一首
-- Previous / 上一首
-- Increase Volume / 增大音量
-- Decrease Volume / 减小音量
-- Like / 喜欢
-- Dislike / 取消喜欢
-- Repeat Off / 关闭重复
-- Repeat One / 单曲循环
-- Repeat All / 列表循环
-- Shuffle / 随机播放
-- Show/Hide Lyrics / 显示隐藏歌词
-- Customize Touch Bar / 自定触控栏
-
-## Language
-
-Set **Language / 语言** in Raycast extension preferences to Auto, English, or 中文. Command titles and search keywords are bilingual; HUD messages and the control panel follow the preference.
+- Controls: open a control panel for playback, volume, favorites, repeat, shuffle, lyrics, and Touch Bar customization.
+- Play
+- Stop
+- Toggle Play/Pause
+- Next Track
+- Previous Track
+- Increase Volume
+- Decrease Volume
+- Like Track
+- Dislike Track
+- Turn Repeat off
+- Repeat One
+- Repeat All
+- Shuffle
+- Show/Hide Lyrics
+- Customize Touch Bar
 
 ## Requirements
 
-NetEase Music for macOS must be installed. macOS may ask Raycast for Accessibility permission because the extension controls NetEase Music through its menu bar.
-# Raycast-NetEaseMusic
+NetEase Music for macOS must be installed. macOS may ask you to grant Raycast Accessibility permission because the extension controls NetEase Music through the app's menu commands.
