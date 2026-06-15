@@ -1,0 +1,276 @@
+{
+  "$schema": "https://www.raycast.com/schemas/extension.json",
+  "name": "netease-music-controller",
+  "title": "NetEaseMusic Controller",
+  "description": "Control NetEase Music playback, likes, repeat, shuffle, lyrics, and volume in English or Chinese.",
+  "icon": "netease-music.png",
+  "author": "chyroc",
+  "license": "MIT",
+  "platforms": [
+    "macOS"
+  ],
+  "keywords": [
+    "netease",
+    "neteasemusic",
+    "net-ease",
+    "cloud music",
+    "网易云",
+    "网易云音乐",
+    "音乐",
+    "player"
+  ],
+  "preferences": [
+    {
+      "name": "language",
+      "title": "Language / 语言",
+      "description": "Language used by the command list and HUD messages.",
+      "type": "dropdown",
+      "required": false,
+      "default": "auto",
+      "data": [
+        {
+          "title": "Auto / 自动",
+          "value": "auto"
+        },
+        {
+          "title": "English",
+          "value": "en"
+        },
+        {
+          "title": "中文",
+          "value": "zh"
+        }
+      ]
+    }
+  ],
+  "commands": [
+    {
+      "name": "controls",
+      "title": "Controls / 控制",
+      "subtitle": "NetEaseMusic",
+      "description": "Open a bilingual control panel for NetEase Music.",
+      "mode": "view",
+      "keywords": [
+        "menu",
+        "controls",
+        "control",
+        "控制",
+        "菜单"
+      ]
+    },
+    {
+      "name": "play",
+      "title": "Play / 播放",
+      "subtitle": "NetEaseMusic",
+      "description": "Play the current track in NetEase Music.",
+      "mode": "no-view",
+      "keywords": [
+        "start",
+        "resume",
+        "播放",
+        "继续"
+      ]
+    },
+    {
+      "name": "stop",
+      "title": "Stop / 停止",
+      "subtitle": "NetEaseMusic",
+      "description": "Stop playback by pausing NetEase Music.",
+      "mode": "no-view",
+      "keywords": [
+        "pause",
+        "暂停",
+        "停止"
+      ]
+    },
+    {
+      "name": "toggle-play",
+      "title": "Toggle Play/Pause / 播放暂停",
+      "subtitle": "NetEaseMusic",
+      "description": "Toggle play or pause in NetEase Music.",
+      "mode": "no-view",
+      "keywords": [
+        "toggle",
+        "play pause",
+        "播放",
+        "暂停",
+        "切换"
+      ]
+    },
+    {
+      "name": "next-track",
+      "title": "Next / 下一首",
+      "subtitle": "NetEaseMusic",
+      "description": "Skip to the next track in NetEase Music.",
+      "mode": "no-view",
+      "keywords": [
+        "next track",
+        "skip",
+        "下一首",
+        "下首"
+      ]
+    },
+    {
+      "name": "previous-track",
+      "title": "Previous / 上一首",
+      "subtitle": "NetEaseMusic",
+      "description": "Go to the previous track in NetEase Music.",
+      "mode": "no-view",
+      "keywords": [
+        "previous track",
+        "back",
+        "上一首",
+        "上首"
+      ]
+    },
+    {
+      "name": "turn-up-volume",
+      "title": "Increase Volume / 增大音量",
+      "subtitle": "NetEaseMusic",
+      "description": "Increase NetEase Music volume.",
+      "mode": "no-view",
+      "keywords": [
+        "volume up",
+        "louder",
+        "音量",
+        "增大音量"
+      ]
+    },
+    {
+      "name": "turn-down-volume",
+      "title": "Decrease Volume / 减小音量",
+      "subtitle": "NetEaseMusic",
+      "description": "Decrease NetEase Music volume.",
+      "mode": "no-view",
+      "keywords": [
+        "volume down",
+        "quieter",
+        "音量",
+        "减小音量"
+      ]
+    },
+    {
+      "name": "like",
+      "title": "Like / 喜欢",
+      "subtitle": "NetEaseMusic",
+      "description": "Like the current track in NetEase Music.",
+      "mode": "no-view",
+      "keywords": [
+        "love",
+        "favorite",
+        "heart",
+        "喜欢",
+        "红心"
+      ]
+    },
+    {
+      "name": "dislike",
+      "title": "Dislike / 取消喜欢",
+      "subtitle": "NetEaseMusic",
+      "description": "Dislike or unlike the current track in NetEase Music.",
+      "mode": "no-view",
+      "keywords": [
+        "unlike",
+        "remove favorite",
+        "取消喜欢",
+        "取消红心",
+        "不喜欢"
+      ]
+    },
+    {
+      "name": "repeat-off",
+      "title": "Repeat off / 关闭重复",
+      "subtitle": "NetEaseMusic",
+      "description": "Set repeat mode to off in NetEase Music.",
+      "mode": "no-view",
+      "keywords": [
+        "repeat off",
+        "loop off",
+        "重复",
+        "关闭循环"
+      ]
+    },
+    {
+      "name": "repeat-one",
+      "title": "Repeat One / 单曲循环",
+      "subtitle": "NetEaseMusic",
+      "description": "Set repeat mode to one track in NetEase Music.",
+      "mode": "no-view",
+      "keywords": [
+        "repeat one",
+        "single loop",
+        "单曲循环",
+        "重复"
+      ]
+    },
+    {
+      "name": "repeat-all",
+      "title": "Repeat All / 列表循环",
+      "subtitle": "NetEaseMusic",
+      "description": "Set repeat mode to all tracks in NetEase Music.",
+      "mode": "no-view",
+      "keywords": [
+        "repeat all",
+        "playlist loop",
+        "列表循环",
+        "全部重复"
+      ]
+    },
+    {
+      "name": "toggle-shuffle",
+      "title": "Shuffle / 随机播放",
+      "subtitle": "NetEaseMusic",
+      "description": "Toggle shuffle in NetEase Music.",
+      "mode": "no-view",
+      "keywords": [
+        "random",
+        "shuffle",
+        "随机",
+        "随机播放"
+      ]
+    },
+    {
+      "name": "toggle-lyrics",
+      "title": "Show/Hide Lyrics / 显示隐藏歌词",
+      "subtitle": "NetEaseMusic",
+      "description": "Show or hide lyrics in NetEase Music.",
+      "mode": "no-view",
+      "keywords": [
+        "lyrics",
+        "lyric",
+        "歌词",
+        "桌面歌词"
+      ]
+    },
+    {
+      "name": "customize-touch-bar",
+      "title": "Customize Touch Bar / 自定触控栏",
+      "subtitle": "NetEaseMusic",
+      "description": "Open NetEase Music's Customize Touch Bar command.",
+      "mode": "no-view",
+      "keywords": [
+        "touch bar",
+        "touchbar",
+        "触控栏"
+      ]
+    }
+  ],
+  "dependencies": {
+    "@raycast/api": "^1.104.19"
+  },
+  "devDependencies": {
+    "@raycast/eslint-config": "^2.1.1",
+    "@types/node": "^22.10.2",
+    "@types/react": "^19.0.0",
+    "eslint": "^9.17.0",
+    "prettier": "^3.4.2",
+    "typescript": "^5.7.2"
+  },
+  "scripts": {
+    "build": "ray build -e dist -o dist && cp dist/*.js dist/*.js.map .",
+    "dev": "ray develop",
+    "fix-lint": "ray lint --fix",
+    "lint": "ray lint",
+    "publish": "npx @raycast/api@latest publish"
+  }
+}
